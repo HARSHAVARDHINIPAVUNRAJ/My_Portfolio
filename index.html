@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harsha · Enhanced Portfolio</title>
-  <!-- Font Awesome Icons -->
+  <title>Harsha · Portfolio</title>
+  <!-- Font Awesome for clean icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -15,172 +15,77 @@
     }
 
     body {
+      background: linear-gradient(145deg, #f6f9fc 0%, #e9f1f8 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2rem 1.5rem;
-      /* animated gradient background */
-      background: linear-gradient(-45deg, #1a2a3a, #2a4b5e, #1f5a7a, #143546);
-      background-size: 400% 400%;
-      animation: gradientShift 18s ease infinite;
-      position: relative;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* floating particles / orbs animation */
-    body::before {
-      content: '';
-      position: fixed;
-      top: -30%;
-      left: -20%;
-      width: 80%;
-      height: 80%;
-      background: radial-gradient(circle at 30% 40%, rgba(100, 200, 255, 0.08) 0%, transparent 60%);
-      border-radius: 50%;
-      animation: floatOrb 22s infinite alternate ease-in-out;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      bottom: -20%;
-      right: -10%;
-      width: 70%;
-      height: 70%;
-      background: radial-gradient(circle at 70% 60%, rgba(150, 230, 255, 0.06) 0%, transparent 60%);
-      border-radius: 50%;
-      animation: floatOrb 28s infinite alternate-reverse ease-in-out;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    @keyframes floatOrb {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, -30px) scale(1.2); }
-    }
-
-    /* main card — glassmorphism with floating effect */
     .portfolio-card {
-      max-width: 1250px;
+      max-width: 1200px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: 56px;
-      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 48px;
+      box-shadow: 0 25px 50px -10px rgba(0, 20, 30, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6);
       padding: 2.5rem 2.8rem;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 2;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      animation: cardGlow 6s infinite alternate;
+      transition: all 0.2s ease;
     }
 
-    @keyframes cardGlow {
-      0% { box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08); }
-      100% { box-shadow: 0 40px 80px -10px rgba(0, 40, 70, 0.7), 0 0 0 2px rgba(255, 255, 255, 0.15); }
-    }
-
-    /* ===== header / photo + contact ===== */
+    /* ===== header / name & contact ===== */
     .profile-header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2.2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 2px solid rgba(0, 40, 60, 0.08);
       padding-bottom: 1.5rem;
-      gap: 1rem;
-    }
-
-    .profile-left {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    /* profile photo — rectangular with rounded corners for better portrait fit */
-    .profile-photo {
-      width: 90px;
-      height: 100px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #2a7a9a, #154b61);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2.6rem;
-      font-weight: 600;
-      box-shadow: 0 8px 20px rgba(0, 30, 50, 0.5), 0 0 0 3px rgba(255, 255, 255, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s;
-      overflow: hidden;
-      flex-shrink: 0;
-      animation: photoPulse 4s infinite alternate;
-    }
-
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%; /* Adjust this value to show more/less of the top portion */
-      display: block;
-    }
-
-    /* If you want to show the full image without cropping, use this instead: */
-    .profile-photo img.fit-full {
-      object-fit: contain;
-      object-position: center;
-    }
-
-    @keyframes photoPulse {
-      0% { box-shadow: 0 8px 20px rgba(0, 30, 50, 0.4), 0 0 0 3px rgba(255, 255, 255, 0.1); }
-      100% { box-shadow: 0 12px 30px rgba(0, 60, 100, 0.6), 0 0 0 5px rgba(255, 255, 255, 0.2); }
     }
 
     .name-title h1 {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      color: #fff;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-      margin-bottom: 0.1rem;
+      color: #0b2b3b;
+      background: linear-gradient(135deg, #0b2b3b 0%, #1f5a7a 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.2rem;
     }
 
     .name-title .badge {
       font-size: 0.9rem;
       font-weight: 500;
-      color: #d4edff;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.3rem 1.4rem;
+      color: #1f5a7a;
+      background: rgba(31, 90, 122, 0.12);
+      padding: 0.3rem 1.2rem;
       border-radius: 40px;
+      display: inline-block;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(31, 90, 122, 0.15);
     }
 
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem 1.5rem;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 0.7rem 1.8rem;
+      gap: 1rem 1.8rem;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0.8rem 1.8rem;
       border-radius: 60px;
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
     }
 
     .contact-links a {
       text-decoration: none;
-      color: #e6f3fa;
-      font-weight: 450;
-      font-size: 0.9rem;
+      color: #1e4b62;
+      font-weight: 500;
+      font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -188,22 +93,22 @@
     }
 
     .contact-links a i {
-      font-size: 1rem;
-      color: #9acfeb;
+      font-size: 1.1rem;
+      color: #2e6a8a;
+      width: 1.4rem;
     }
 
     .contact-links a:hover {
-      color: white;
+      color: #0a2a3a;
       transform: translateY(-2px);
-      text-shadow: 0 0 12px rgba(120, 200, 255, 0.3);
     }
 
-    /* ===== grid ===== */
+    /* ===== grid layout ===== */
     .grid-2col {
       display: grid;
       grid-template-columns: 1.1fr 2fr;
       gap: 2rem;
-      margin-top: 0.2rem;
+      margin-top: 0.5rem;
     }
 
     /* ===== left column ===== */
@@ -214,37 +119,36 @@
     }
 
     .info-card {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       border-radius: 28px;
       padding: 1.6rem 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.3);
-      transition: transform 0.25s ease, background 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 18px -8px rgba(0, 20, 30, 0.08);
+      transition: transform 0.2s;
     }
 
     .info-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.75);
     }
 
     .info-card h3 {
       font-size: 1.1rem;
       font-weight: 600;
-      color: #e3f0f7;
+      color: #134257;
       letter-spacing: -0.01em;
       margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 2px solid rgba(19, 66, 87, 0.08);
       padding-bottom: 0.6rem;
     }
 
     .info-card h3 i {
-      color: #7fc1e0;
+      color: #2a729b;
       font-size: 1.2rem;
     }
 
@@ -255,38 +159,34 @@
     }
 
     .skill-tag {
-      background: rgba(255, 255, 255, 0.07);
-      padding: 0.3rem 1.2rem;
+      background: white;
+      padding: 0.3rem 1rem;
       border-radius: 40px;
       font-size: 0.85rem;
       font-weight: 500;
-      color: #e2f0f7;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(2px);
-      transition: all 0.2s;
+      color: #154b61;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(31, 90, 122, 0.08);
     }
 
     .skill-tag i {
       margin-right: 6px;
-      color: #7fc1e0;
-    }
-
-    .skill-tag:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.15);
+      color: #2a729b;
+      font-size: 0.8rem;
     }
 
     .edu-item {
       margin-bottom: 1rem;
-      color: #e1edf5;
     }
 
-    .edu-item:last-child { margin-bottom: 0; }
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
 
     .edu-item strong {
       display: block;
       font-weight: 700;
-      color: white;
+      color: #0b2b3b;
       font-size: 1rem;
     }
 
@@ -294,34 +194,35 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      font-size: 0.8rem;
-      color: #b6d4e8;
+      font-size: 0.85rem;
+      color: #2e5a72;
       margin-top: 0.2rem;
     }
 
     .edu-item .desc {
-      font-size: 0.85rem;
-      color: #cfe3f0;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.2rem 1rem;
+      font-size: 0.9rem;
+      color: #1e4b62;
+      background: rgba(255, 255, 255, 0.4);
+      padding: 0.2rem 0.8rem;
       border-radius: 30px;
       display: inline-block;
       margin-top: 0.3rem;
-      border: 1px solid rgba(255, 255, 255, 0.03);
     }
 
     .cert-item {
       font-size: 0.9rem;
       padding: 0.2rem 0 0.2rem 0.8rem;
-      border-left: 3px solid #5ba3c7;
+      border-left: 3px solid #2a729b;
       margin-bottom: 0.7rem;
-      color: #d8eaf5;
+      color: #103d51;
     }
 
-    .cert-item:last-child { margin-bottom: 0; }
+    .cert-item:last-child {
+      margin-bottom: 0;
+    }
 
     .cert-item i {
-      color: #7fc1e0;
+      color: #2a729b;
       width: 1.2rem;
       margin-right: 0.2rem;
     }
@@ -329,20 +230,19 @@
     .hobbies {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 0.8rem;
+      gap: 0.6rem 1rem;
       margin-top: 0.2rem;
     }
 
     .hobbies span {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.2rem 1.2rem;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 0.3rem 1.2rem;
       border-radius: 40px;
-      font-size: 0.8rem;
-      color: #d2e6f2;
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
-    /* ===== right panel ===== */
+    /* ===== right column ===== */
     .right-panel {
       display: flex;
       flex-direction: column;
@@ -350,137 +250,136 @@
     }
 
     .project-card {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       border-radius: 28px;
       padding: 1.6rem 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.25);
-      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 18px -8px rgba(0, 20, 30, 0.08);
+      transition: all 0.2s;
     }
 
     .project-card:hover {
-      transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.4);
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 16px 30px -12px rgba(0, 40, 60, 0.12);
     }
 
     .project-card h3 {
       font-size: 1.2rem;
       font-weight: 700;
-      color: white;
+      color: #0b2b3b;
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.6rem;
     }
 
     .project-card h3 i {
-      color: #7fc1e0;
+      color: #2a729b;
       font-size: 1.3rem;
     }
 
     .project-card .tech-badge {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.08);
-      padding: 0.15rem 1.2rem;
+      background: rgba(31, 90, 122, 0.1);
+      padding: 0.15rem 1rem;
       border-radius: 30px;
       font-size: 0.75rem;
       font-weight: 600;
-      color: #b3d8ef;
+      color: #1f5a7a;
       letter-spacing: 0.3px;
       margin-bottom: 0.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(31, 90, 122, 0.1);
     }
 
     .project-card p {
-      color: #d4e7f2;
+      color: #1d4052;
       line-height: 1.6;
       font-size: 0.95rem;
     }
 
     .objective-box {
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
       border-radius: 28px;
       padding: 1.4rem 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.9);
       font-size: 1rem;
-      color: #e3f0f7;
+      color: #103d51;
       line-height: 1.6;
-      border-left: 6px solid #5ba3c7;
+      border-left: 6px solid #2a729b;
       margin-bottom: 0.2rem;
     }
 
     .objective-box i {
-      color: #7fc1e0;
+      color: #2a729b;
       margin-right: 0.5rem;
     }
 
-    /* location / extra */
-    .extra-info {
-      background: rgba(0, 0, 0, 0.15);
-      border-radius: 40px;
-      padding: 0.8rem 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(4px);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.8rem;
-      align-items: center;
-      color: #d2e6f2;
-    }
-
-    .extra-info i {
-      color: #7fc1e0;
-      margin-right: 4px;
-    }
-
-    /* responsive */
+    /* ===== responsive ===== */
     @media (max-width: 880px) {
-      .portfolio-card { padding: 1.8rem; }
-      .grid-2col { grid-template-columns: 1fr; gap: 1.5rem; }
-      .profile-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-      .contact-links { width: 100%; justify-content: center; padding: 0.6rem 1rem; }
-      .profile-left { width: 100%; }
-      .name-title h1 { font-size: 2rem; }
+      .portfolio-card {
+        padding: 1.8rem;
+      }
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .contact-links {
+        width: 100%;
+        justify-content: center;
+        padding: 0.7rem 1rem;
+        border-radius: 40px;
+      }
+      .name-title h1 {
+        font-size: 2.4rem;
+      }
     }
 
-    @media (max-width: 500px) {
-      .portfolio-card { padding: 1.2rem; border-radius: 32px; }
-      .profile-photo { width: 70px; height: 85px; }
-      .profile-photo i { font-size: 2.2rem; }
-      .contact-links a { font-size: 0.75rem; }
-      .info-card, .project-card { padding: 1.2rem; }
+    @media (max-width: 480px) {
+      .portfolio-card {
+        padding: 1.2rem;
+        border-radius: 32px;
+      }
+      .contact-links {
+        flex-wrap: wrap;
+        gap: 0.4rem 0.8rem;
+      }
+      .contact-links a {
+        font-size: 0.8rem;
+      }
+      .info-card, .project-card {
+        padding: 1.2rem;
+      }
     }
 
     /* small extras */
-    .text-muted { opacity: 0.6; }
-    .flex { display: flex; align-items: center; gap: 0.4rem; }
+    .text-muted {
+      color: #2e5a72;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+
     .mt-1 { margin-top: 0.3rem; }
+    .mb-1 { margin-bottom: 0.3rem; }
+    .flex { display: flex; align-items: center; gap: 0.4rem; }
   </style>
 </head>
 <body>
-
   <div class="portfolio-card">
 
-    <!-- header with profile photo -->
+    <!-- header -->
     <div class="profile-header">
-      <div class="profile-left">
-        <div class="profile-photo">
-          <!-- REPLACE 'pink formal.jpeg' with your actual image path -->
-          <img src="pink formal.jpeg" alt="Harsha" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
-          <!-- 
-            To show the FULL image without cropping, use this line instead:
-            <img src="pink formal.jpeg" alt="Harsha" style="width:100%;height:100%;object-fit:contain;">
-          -->
-        </div>
-        <div class="name-title">
-          <h1>HARSHAVARDHINI P</h1>
-          <span class="badge"><i class="fas fa-graduation-cap" style="margin-right: 6px;"></i>B.E · CSE · 2027</span>
-        </div>
+      <div class="name-title">
+        <h1>HARSHAVARDHINI P</h1>
+        <span class="badge"><i class="fas fa-graduation-cap" style="margin-right: 6px;"></i>B.E · CSE · 2027</span>
       </div>
       <div class="contact-links">
         <a href="mailto:harshavardhinipavunraj@gmail.com"><i class="fas fa-envelope"></i> Email</a>
@@ -492,9 +391,10 @@
 
     <!-- grid -->
     <div class="grid-2col">
-      <!-- LEFT -->
+      <!-- LEFT column -->
       <div class="left-panel">
 
+        <!-- objective (mobile friendly) -->
         <div class="objective-box">
           <i class="fas fa-bullseye"></i> Aspiring software engineer · seeking internship/entry-level role to apply programming & analytical skills. Passionate about development & growth.
         </div>
@@ -545,7 +445,7 @@
           </div>
         </div>
 
-        <!-- certs + hobbies -->
+        <!-- certifications + hobbies -->
         <div class="info-card">
           <h3><i class="fas fa-certificate"></i> Certifications</h3>
           <div class="cert-item"><i class="fas fa-language"></i> Inlingua: Spanish (A1.1)</div>
@@ -553,8 +453,8 @@
           <div class="cert-item"><i class="fas fa-code"></i> TCS Codevita S13 (Global Rank)</div>
           <div class="cert-item"><i class="fas fa-database"></i> NPTEL: DBMS</div>
           <div class="cert-item"><i class="fas fa-robot"></i> Simplilearn · Gen AI, Copilot, Azure AI-102</div>
-          <div style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.8rem;">
-            <div class="flex" style="margin-bottom: 0.3rem;"><i class="fas fa-heart" style="color: #7fc1e0;"></i> <strong style="color: #e3f0f7;">Hobbies</strong></div>
+          <div style="margin-top: 1rem; border-top: 1px solid rgba(0,0,0,0.04); padding-top: 0.8rem;">
+            <div class="flex" style="margin-bottom: 0.3rem;"><i class="fas fa-heart" style="color: #2a729b;"></i> <strong style="color: #134257;">Hobbies</strong></div>
             <div class="hobbies">
               <span><i class="fas fa-book-open"></i> Reading comics</span>
               <span><i class="fas fa-film"></i> Watching Movies</span>
@@ -564,8 +464,9 @@
         </div>
       </div>
 
-      <!-- RIGHT -->
+      <!-- RIGHT column -->
       <div class="right-panel">
+
         <!-- projects -->
         <div class="project-card">
           <h3><i class="fas fa-credit-card"></i> ATM Simulation System</h3>
@@ -579,15 +480,20 @@
           <p>Teachers can create, manage, and schedule quizzes. Students join, view real-time ranks, and check scores. Class performance analytics help teachers identify areas for improvement and provide feedback.</p>
         </div>
 
-        <!-- extra info -->
-        <div class="extra-info">
-          <span><i class="fas fa-map-pin"></i> Thirumanur, Ariyalur</span>
-          <span><i class="fas fa-calendar-alt"></i> Available for internships</span>
-          <span><i class="fas fa-globe"></i> Tamil · English · Spanish (A1)</span>
+        <!-- extra: objective in right panel for desktop (optional, but we already have it left) -->
+        <!-- but keep clean, maybe show more achievements? already included -->
+
+        <!-- micro: more certifications or extra -->
+        <div style="background: rgba(255,255,255,0.3); border-radius: 28px; padding: 0.8rem 1.8rem; border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(2px);">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; align-items: center;">
+            <span style="display: flex; align-items: center; gap: 6px; color: #134257;"><i class="fas fa-map-pin" style="color: #2a729b;"></i> Thirumanur, Ariyalur</span>
+            <span style="display: flex; align-items: center; gap: 6px; color: #134257;"><i class="fas fa-calendar-alt" style="color: #2a729b;"></i> Available for internships</span>
+            <span style="display: flex; align-items: center; gap: 6px; color: #134257;"><i class="fas fa-globe" style="color: #2a729b;"></i> Tamil · English · Spanish (A1)</span>
+          </div>
         </div>
 
-        <!-- file hint -->
-        <div style="display: flex; justify-content: flex-end; margin-top: 0.2rem; opacity: 0.5; font-size: 0.8rem; color: #c0dcee;">
+        <!-- small footer / extra link -->
+        <div style="display: flex; justify-content: flex-end; margin-top: 0.2rem; opacity: 0.6; font-size: 0.8rem; color: #1f5a7a;">
           <span><i class="far fa-file-pdf"></i> Harsha_resume.pdf · 2026</span>
         </div>
       </div>
